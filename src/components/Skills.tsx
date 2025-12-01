@@ -816,49 +816,19 @@ export default function Skills() {
       <PremiumBackground />
 
       <div className="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-        {/* COMPACT HEADER SECTION */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-8 md:mb-12 lg:mb-14"
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 mb-4 backdrop-blur-xl"
-          >
-            <Sparkles className="w-4 h-4 text-blue-400" />
-            <span className="text-xs md:text-sm font-semibold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Technical Excellence
-            </span>
-          </motion.div>
+        {/* Main Title */}
+            <div className="space-y-3">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-none">
+                My
+                <span className=" mt-2 text-transparent bg-clip-text bg-gradient-to-r from-[#5AA8D6] via-[#00bfff] to-[#3066be] bg-[length:200%_auto] animate-gradient-x">
+                  Skills
+                </span>
+              </h2>
 
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black mb-2 md:mb-3 leading-tight px-2">
-            <span className="text-white">My Professional</span>
-            <br />
-            <span className="relative inline-block mt-1">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400">
-                Tech Stack
-              </span>
-              <motion.div
-                className="absolute -bottom-1 left-0 right-0 h-0.5 md:h-1 rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              />
-            </span>
-          </h2>
-
-          <p className="text-sm md:text-base text-slate-400 leading-relaxed max-w-2xl mx-auto px-4">
-            Explore my technical universe through an interactive visualization.
-            Each technology represents years of learning and application.
-          </p>
-        </motion.div>
+              <div className="flex items-center gap-3 mt-4">
+                
+              </div>
+            </div>
 
         <div className="mb-5 md:mb-8">
           <ControlBar

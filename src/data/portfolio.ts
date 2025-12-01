@@ -24,7 +24,7 @@ export const personalInfo = {
     shortRole:   "Dev",
     location:    "Bishnupur, West Bengal, India",
     email:       "nayaknilanjan2@gmail.com",
-    resumeUrl:   "/Nilajan Nayak.pdf",
+    resumeUrl:   "src/data/Nilajan Nayak (2).pdf",
     social: [
         { icon: Github, url: "https://github.com/Nilanjan-Nayak", label: "GitHub" },
         { icon: Linkedin, url: "https://www.linkedin.com/in/nilanjan-nayak", label: "LinkedIn" },
@@ -231,6 +231,16 @@ export const aboutData = {
             icon:           "🏅5️⃣"
         },
         {
+            name:           "The State level online Coding Competition (Techphoria-2024), ",
+            category:       "TECHNIQUE POLYTECHNIC INSTITUTE",
+            achievement:    "Participate ",
+            date:           "9th May 2024",
+            description:    "Certificate of Participation awarded to Nilanjan Nayak from Uluberia Government Polytechnic for successfully taking part in NBA Approve the state-level online Coding Competition (Techphoria-2024) hosted by Technique Polytechnic Institute on October 22, 2024.",
+            certificate:    "https://drive.google.com/file/d/1GV1mo7NEz3WMWLCoiliwUrDG2HKXmEQK/view?usp=sharing ",
+            gradient:       "from-[#C0C0C0] to-[#A8A8A8],from-[#FFD700] to-[#FFA500]",
+            icon:           "🏅5️⃣"
+        },
+        {
             name:           "Workshop on Basic Digital Electronics",
             category:       "ULUBERIA GOVT. POLYTECHNIC",
             achievement:    "Participate in Group ",
@@ -349,6 +359,25 @@ export interface Project {
 }
 
 export const projectsData: Project[] = [
+    
+    {
+        title:       "Nayak SVG",
+        description: "A Professional SVG Generator for any type of design and image upload.Integrated backend services for any type of image upload and generate svg file and  remove background from image then download svg file.",
+        image:       "",
+        tags:        [ "Web Development", "html", "css", "js",],
+        category:    "Website",
+        accent:      "#5AA8D6",
+        liveUrl:     "",
+        githubUrl:   "https://github.com/Nilanjan-Nayak",
+        achievements: [
+            "Implemented modern UI/UX principles",
+            "Integrated backend services for any type of image upload and generate svg file "
+        ],
+        stats: {
+            year: "2024",
+            status: "In Progress",
+        }
+    },
     {
         title:       "Media Local Storage Management",
         description: "A web application that efficiently manages and organizes local media files.",
@@ -446,13 +475,12 @@ export const skillsData = {
             gradient:     "from-[#3066be] to-[#5AA8D6]",
             iconSize:     48,
             skills: [
-                { name: "Python",     level: 85, years: 3, projects: 4, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-                { name: "C",          level: 80, years: 2, projects: 2, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
-                { name: "JavaScript", level: 75, years: 2, projects: 15, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-                { name: "HTML",       level: 90, years: 3, projects: 20, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-                { name: "CSS",        level: 90, years: 3, projects: 20, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-                { name: "TypeScript", level: 75, years: 2, projects: 5, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-                { name: "Java",       level: 75, years: 2, projects: 3, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+                { name: "Python",     level: 15, years: 3, projects: 2, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+                { name: "C",          level: 9, years: 2, projects: 2, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
+                { name: "JavaScript", level: 25, years: 2, projects: 12, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+                { name: "HTML",       level: 45, years: 3, projects: 20, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+                { name: "CSS",        level: 45, years: 3, projects: 20, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+                { name: "Java",       level: 13, years: 2, projects: 3, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
                 
             ]
         },
@@ -464,9 +492,10 @@ export const skillsData = {
             gradient: "from-[#5AA8D6] to-[#00bfff]",
             iconSize: 32,
             skills: [
-                { name: "React",      level: 70, years: 1, projects: 5, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-                { name: "Node.js",    level: 60, years: 1, projects: 3, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-                { name: "vite",       level: 95, years: 3, projects: 5, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" },
+                { name: "TypeScript", level: 25, years: 2, projects: 5, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+                { name: "React",      level: 25, years: 1, projects: 5, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+                { name: "Node.js",    level: 25, years: 1, projects: 5, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+                { name: "vite",       level: 20, years: 3, projects: 5, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" },
             ]
         },
         {
@@ -477,9 +506,12 @@ export const skillsData = {
             gradient:     "from-[#00bfff] to-[#3066be]",
             iconSize:     32,
             skills: [
-                { name: "Generative AI", level: 75, years: 1, projects: 5, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
-                { name: "Data Viz",      level: 80, years: 2, projects: 8, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" },
-                { name: "Algorithms",    level: 70, years: 2, projects: 10, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" }
+                { name: "Generative AI", level: 20, years: 1, projects: 2, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
+                { name: "Data Viz",      level: 20, years: 2, projects: 4, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" },
+                { name: "Algorithms",    level: 15, years: 2, projects: 2, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+                { name: "Machine Learning", level: 15, years: 2, projects: 3, logo: "https://www.freepik.com/icon/machine-learning_2172891#fromView=image_search_similar&page=1&position=0&uuid=7d491d3a-a83b-4b0a-b23c-472424238414" },
+                { name: "Chat GPT", level: 45, years: 2, projects: 6, logo: "https://upload.wikimedia.org/wikipedia/commons/e/ef/ChatGPT-Logo.svg" },
+                { name: "Preplexity", level: 45, years: 2, projects: 6, logo: "https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/perplexity-color.png" },
             ]
         },
         {

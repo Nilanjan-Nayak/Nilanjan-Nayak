@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import {
   Mail, MapPin, Phone, Send, CheckCircle2,
   Linkedin, Github, Twitter, Globe, Clock, MessageSquare,
-  Sparkles, ArrowUpRight, Calendar
+  Sparkles, ArrowUpRight, Calendar, AlertCircle
 } from 'lucide-react';
 
 export default function Contact() {
@@ -17,23 +18,56 @@ export default function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const isHeaderInView = useInView(headerRef, { once: true, margin: "-100px" });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage('');
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      // EmailJS configuration
+      // You need to replace these with your actual EmailJS credentials
+      const serviceId = 'service_your_id'; // Replace with your EmailJS service ID
+      const templateId = 'template_your_id'; // Replace with your EmailJS template ID
+      const publicKey = 'your_public_key'; // Replace with your EmailJS public key
 
-    setIsSubmitting(false);
-    setSubmitStatus('success');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'nilanjannayak665@gmail.com',
+        },
+        publicKey
+      );
 
-    setTimeout(() => setSubmitStatus('idle'), 5000);
+      console.log('Email sent successfully:', result);
+      setIsSubmitting(false);
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+      setErrorMessage('Failed to send message. Please try again or contact me directly at nilanjannayak665@gmail.com');
+
+      setTimeout(() => {
+        setSubmitStatus('idle');
+        setErrorMessage('');
+      }, 5000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -47,16 +81,16 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@nilanjannayak.com',
-      link: 'mailto:hello@nilanjannayak.com',
+      value: 'nilanjannayak665@gmail.com',
+      link: 'mailto:nilanjannayak665@gmail.com',
       description: 'Drop me a line anytime',
       gradient: 'from-[#3066be] to-[#5AA8D6]',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91 98765 43210',
-      link: 'tel:+919876543210',
+      value: '+91 9883807806',
+      link: 'tel:+919883807806',
       description: 'Mon-Fri from 9am to 6pm',
       gradient: 'from-[#5AA8D6] to-[#00bfff]',
     },
@@ -71,9 +105,8 @@ export default function Contact() {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/nilanjan-nayak-73b475322?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B9Z7At6fORKaN6FkpV9Z6Jg%3D%3D', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/nilanjan-nayak', label: 'GitHub' },
     { icon: Globe, href: '#', label: 'Website' },
   ];
 
@@ -273,6 +306,21 @@ export default function Contact() {
                   <div>
                     <div className="text-emerald-400 font-semibold mb-1">Message Sent Successfully!</div>
                     <div className="text-sm text-emerald-300/80">I'll get back to you as soon as possible.</div>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Error Message */}
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg flex items-start gap-3"
+                >
+                  <AlertCircle size={20} className="text-red-400 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <div className="text-red-400 font-semibold mb-1">Failed to Send Message</div>
+                    <div className="text-sm text-red-300/80">{errorMessage}</div>
                   </div>
                 </motion.div>
               )}
