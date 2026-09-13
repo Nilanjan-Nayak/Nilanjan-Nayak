@@ -41,33 +41,61 @@ export default function Navigation() {
     icon: iconMap[item.sectionId] || Sparkles
   }));
 
-  // Primary bottom dock items (5 key quick-jump sections)
+  // Primary bottom dock items (All 6 core sections)
   const bottomDockItems: MobileNavItem[] = [
     { id: 'hero', label: 'Home', shortLabel: 'Home', sectionId: 'hero', icon: Home },
     { id: 'about', label: 'About', shortLabel: 'About', sectionId: 'about', icon: User },
-    { id: 'projects', label: 'Projects', shortLabel: 'Projects', sectionId: 'projects', icon: Briefcase },
+    { id: 'dream-project', label: 'Dream', shortLabel: 'Dream', sectionId: 'dream-project', icon: Rocket },
+    { id: 'projects', label: 'Projects', shortLabel: 'Work', sectionId: 'projects', icon: Briefcase },
     { id: 'skills', label: 'Skills', shortLabel: 'Skills', sectionId: 'skills', icon: Code2 },
-    { id: 'contact', label: 'Contact', shortLabel: 'Contact', sectionId: 'contact', icon: Send }
+    { id: 'contact', label: 'Contact', shortLabel: 'Chat', sectionId: 'contact', icon: Send }
   ];
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          setIsScrolled(scrollY > 25);
 
-      // Update active section based on scroll position
-      const sections = navItems.map((item) => item.sectionId);
-      const current = sections.find((section) => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 140 && rect.bottom >= 140;
-        }
-        return false;
-      });
-      if (current) setActiveSection(current);
+          const windowHeight = window.innerHeight;
+          const fullHeight = document.documentElement.scrollHeight;
+
+          // If scrolled near the bottom of page, highlight contact
+          if (scrollY + windowHeight >= fullHeight - 80) {
+            setActiveSection('contact');
+            ticking = false;
+            return;
+          }
+
+          // If at the very top, highlight hero
+          if (scrollY < 120) {
+            setActiveSection('hero');
+            ticking = false;
+            return;
+          }
+
+          // Check section positions from bottom to top
+          const sections = ['contact', 'skills', 'projects', 'dream-project', 'about', 'hero'];
+          for (const sectionId of sections) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+              const rect = element.getBoundingClientRect();
+              if (rect.top <= windowHeight * 0.38 && rect.bottom >= 100) {
+                setActiveSection(sectionId);
+                break;
+              }
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -85,10 +113,30 @@ export default function Navigation() {
 
   const scrollToSection = (sectionId: string) => {
     setIsMobileMenuOpen(false);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    document.body.style.overflow = 'unset';
+
+    const delay = isMobileMenuOpen ? 120 : 0;
+    setTimeout(() => {
+      if (sectionId === 'hero') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setActiveSection('hero');
+        return;
+      }
+
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const isMobile = window.innerWidth < 768;
+        const headerOffset = isMobile ? 65 : 75;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: Math.max(0, offsetPosition),
+          behavior: 'smooth'
+        });
+        setActiveSection(sectionId);
+      }
+    }, delay);
   };
 
   return (
@@ -187,7 +235,8 @@ export default function Navigation() {
               {/* Quick Resume Button (Visible on both desktop and mobile header) */}
               <a
                 href={personalInfo.resumeUrl}
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 bg-gradient-to-r from-[#1a1f35] to-[#131c80]/40 hover:from-[#3066be] hover:to-[#5AA8D6] text-white text-xs sm:text-sm font-semibold rounded-xl transition-all duration-300 border border-[#3066be]/40 hover:border-transparent shadow-[0_0_12px_rgba(48,102,190,0.2)] active:scale-95"
               >
                 <FileText size={14} className="text-[#5AA8D6] group-hover:text-white" />
@@ -218,12 +267,13 @@ export default function Navigation() {
       <div
         className="fixed left-1/2 -translate-x-1/2 z-40 md:hidden transition-all duration-300 pointer-events-auto"
         style={{
-          bottom: 'max(0.75rem, env(safe-area-inset-bottom, 0.75rem))'
+          bottom: 'max(0.6rem, env(safe-area-inset-bottom, 0.6rem))',
+          maxWidth: 'calc(100vw - 1rem)'
         }}
         role="navigation"
         aria-label="Mobile Quick Dock"
       >
-        <div className="flex items-center gap-1 p-1.5 rounded-full backdrop-blur-2xl bg-[#02000d]/90 border border-[#3066be]/40 shadow-[0_12px_40px_rgba(0,0,0,0.85),0_0_20px_rgba(90,168,214,0.25)]">
+        <div className="flex items-center gap-0.5 xs:gap-1 p-1 xs:p-1.5 rounded-full backdrop-blur-2xl bg-[#030014]/90 border border-[#3066be]/40 shadow-[0_12px_40px_rgba(0,0,0,0.9),0_0_20px_rgba(90,168,214,0.25)]">
           {bottomDockItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeSection === item.sectionId;
@@ -234,14 +284,14 @@ export default function Navigation() {
                 onClick={() => scrollToSection(item.sectionId)}
                 className={`relative flex items-center justify-center transition-all duration-300 active:scale-90 ${
                   isActive
-                    ? 'px-3.5 py-2 rounded-full bg-gradient-to-r from-[#3066be] to-[#5AA8D6] text-white shadow-[0_0_15px_rgba(90,168,214,0.5)]'
-                    : 'p-2.5 rounded-full text-slate-400 hover:text-white hover:bg-white/5'
+                    ? 'px-2.5 xs:px-3 py-1.5 xs:py-2 rounded-full bg-gradient-to-r from-[#3066be] to-[#5AA8D6] text-white shadow-[0_0_15px_rgba(90,168,214,0.5)]'
+                    : 'p-2 xs:p-2.5 rounded-full text-slate-400 hover:text-white hover:bg-white/5'
                 }`}
                 aria-label={item.label}
               >
-                <Icon size={18} />
+                <Icon size={17} />
                 {isActive && (
-                  <span className="text-[11px] font-bold ml-1.5 whitespace-nowrap animate-fade-in">
+                  <span className="hidden xs:inline text-[10px] font-bold ml-1 whitespace-nowrap animate-fade-in">
                     {item.shortLabel}
                   </span>
                 )}
@@ -252,14 +302,14 @@ export default function Navigation() {
           {/* More / Menu Button in Dock */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`p-2.5 rounded-full transition-all duration-300 active:scale-90 ${
+            className={`p-2 xs:p-2.5 rounded-full transition-all duration-300 active:scale-90 ${
               isMobileMenuOpen
                 ? 'bg-[#5AA8D6] text-white shadow-[0_0_15px_rgba(90,168,214,0.6)]'
                 : 'text-slate-400 hover:text-white hover:bg-white/5'
             }`}
             aria-label="Toggle All Sections Menu"
           >
-            <Sparkles size={18} />
+            <Sparkles size={17} />
           </button>
         </div>
       </div>
@@ -391,7 +441,8 @@ export default function Navigation() {
             {/* Resume Download Full Action */}
             <a
               href={personalInfo.resumeUrl}
-              download
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-[#3066be] to-[#5AA8D6] text-white font-bold text-sm rounded-xl shadow-[0_0_25px_rgba(90,168,214,0.4)] overflow-hidden active:scale-98 transition-all"
             >
               <FileText size={16} />

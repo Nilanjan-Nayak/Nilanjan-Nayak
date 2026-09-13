@@ -134,7 +134,8 @@ export default function Hero() {
 
                 <a
                   href={personalInfo.resumeUrl}
-                  download
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group w-full sm:w-auto px-6 py-3 border-2 border-[#3066be]/50 hover:border-[#5AA8D6] bg-[#050939]/30 hover:bg-[#131c80]/50 backdrop-blur-sm text-slate-100 font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2 rounded-lg hover:shadow-[0_0_20px_rgba(90,168,214,0.2)] hover:scale-[1.02] active:scale-[0.98]"
                 >
                   <FileDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />

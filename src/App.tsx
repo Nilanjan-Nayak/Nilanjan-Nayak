@@ -185,7 +185,7 @@ function App() {
             <Contact />
           </div>
 
-          <footer className="relative z-10 bg-[#0A0118]/80 backdrop-blur-md border-t border-[#1E1B4B]/50 py-6 sm:py-8">
+          <footer className="relative z-10 bg-[#0A0118]/80 backdrop-blur-md border-t border-[#1E1B4B]/50 pt-6 pb-20 sm:py-8">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center text-slate-400 text-xs sm:text-sm">
               <p>© {new Date().getFullYear()} {personalInfo.name}. Crafted with passion and precision.</p>
             </div>

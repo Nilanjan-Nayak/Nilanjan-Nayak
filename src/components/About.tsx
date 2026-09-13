@@ -349,13 +349,21 @@ export default function About() {
                         </p>
 
                         {/* Action Link */}
-                        <a
-                          href={fair.certificate}
-                          className="inline-flex items-center gap-1.5 text-[10px] font-bold text-[#5AA8D6] hover:text-white transition-colors group/link"
-                        >
-                          <span>VIEW CERTIFICATE</span>
-                          <ExternalLink className="w-3 h-3 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                        </a>
+                        {fair.certificate ? (
+                          <a
+                            href={fair.certificate}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-[10px] font-bold text-[#5AA8D6] hover:text-white transition-colors group/link"
+                          >
+                            <span>VIEW CERTIFICATE</span>
+                            <ExternalLink className="w-3 h-3 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                          </a>
+                        ) : (
+                          <span className="inline-flex items-center gap-1.5 text-[10px] font-medium text-slate-500">
+                            <span>PARTICIPATION RECORD</span>
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -398,19 +406,49 @@ export default function About() {
               <div className="grid gap-3 sm:gap-4">
                 {aboutData.certifications.map((cert, index) => (
                   <div key={index} className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-[#0a0e1a]/80 backdrop-blur-sm border border-[#1a1f35] rounded-xl hover:border-[#3066be]/30 transition-colors group">
-                    <div className="p-1.5 sm:p-2 bg-[#131c80]/10 rounded-lg group-hover:bg-[#131c80]/20 transition-colors flex-shrink-0">
-                      <Download className="w-4 h-4 sm:w-5 sm:h-5 text-[#5AA8D6]" />
-                    </div>
+                    {cert.certificate ? (
+                      <a
+                        href={cert.certificate}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="View Certificate"
+                        className="p-1.5 sm:p-2 bg-[#131c80]/10 hover:bg-[#131c80]/30 rounded-lg transition-colors flex-shrink-0"
+                      >
+                        <Download className="w-4 h-4 sm:w-5 sm:h-5 text-[#5AA8D6]" />
+                      </a>
+                    ) : (
+                      <div className="p-1.5 sm:p-2 bg-[#131c80]/10 rounded-lg group-hover:bg-[#131c80]/20 transition-colors flex-shrink-0">
+                        <Download className="w-4 h-4 sm:w-5 sm:h-5 text-[#5AA8D6]" />
+                      </div>
+                    )}
                     <div className="flex-1 min-w-0">
                       <h4 className="font-bold text-white text-sm sm:text-base truncate group-hover:text-[#5AA8D6] transition-colors">
-                        {cert.name}
+                        {cert.certificate ? (
+                          <a href={cert.certificate} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                            {cert.name}
+                          </a>
+                        ) : (
+                          cert.name
+                        )}
                       </h4>
                       <p className="text-xs sm:text-sm text-slate-400">{cert.issuer}</p>
                       <p className="text-[10px] sm:text-xs text-slate-500 mt-1">{cert.year}</p>
                     </div>
-                    <a href="#" className="p-1.5 sm:p-2 text-slate-500 hover:text-white transition-colors flex-shrink-0">
-                      <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                    </a>
+                    {cert.certificate ? (
+                      <a
+                        href={cert.certificate}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-1.5 sm:p-2 text-slate-400 hover:text-[#5AA8D6] hover:bg-[#3066be]/20 rounded-lg transition-colors flex-shrink-0"
+                        title="View Certificate"
+                      >
+                        <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                      </a>
+                    ) : (
+                      <span className="p-1.5 sm:p-2 text-slate-600 flex-shrink-0 opacity-40">
+                        <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                      </span>
+                    )}
                   </div>
                 ))}
               </div>
@@ -422,14 +460,27 @@ export default function About() {
               <p className="text-xs sm:text-sm text-slate-400">
                 Download my resume to see my full work history and qualifications.
               </p>
-              <a
-                href={personalInfo.resumeUrl}
-                download
-                className="inline-flex items-center gap-2 px-5 sm:px-6 py-2 sm:py-2.5 bg-[#5AA8D6] hover:bg-[#3066be] text-white text-sm sm:text-base font-bold rounded-lg transition-colors shadow-lg shadow-[#5AA8D6]/20"
-              >
-                <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                Download Resume
-              </a>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-1">
+                <a
+                  href={personalInfo.resumeDownloadUrl || personalInfo.resumeUrl}
+                  download="Nilanjan_Nayak_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-gradient-to-r from-[#3066be] to-[#5AA8D6] hover:from-[#5AA8D6] hover:to-[#00bfff] text-white text-sm sm:text-base font-bold rounded-xl transition-all shadow-lg shadow-[#5AA8D6]/20 active:scale-95"
+                >
+                  <Download className="w-4 h-4" />
+                  Direct Download Resume
+                </a>
+                <a
+                  href={personalInfo.resumeViewUrl || personalInfo.resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#0a0e1a]/80 hover:bg-[#1a1f35] border border-[#3066be]/40 text-slate-300 hover:text-white text-sm sm:text-base font-medium rounded-xl transition-all active:scale-95"
+                >
+                  <ExternalLink className="w-4 h-4 text-[#5AA8D6]" />
+                  Preview in Drive
+                </a>
+              </div>
             </div>
           </div>
         </div>

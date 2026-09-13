@@ -104,8 +104,8 @@ export default function Contact() {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: 'https://www.linkedin.com/in/nilanjan-nayak-73b475322?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B9Z7At6fORKaN6FkpV9Z6Jg%3D%3D', label: 'LinkedIn' },
-    { icon: Github, href: 'https://github.com/nilanjan-nayak', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/nilanjan-nayak-73b475322', label: 'LinkedIn' },
+    { icon: Github, href: 'https://github.com/Nilanjan-Nayak', label: 'GitHub' },
     { icon: Globe, href: '#', label: 'Website' },
   ];
 
