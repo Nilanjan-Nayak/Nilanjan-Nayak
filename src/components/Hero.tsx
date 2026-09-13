@@ -44,7 +44,7 @@ export default function Hero() {
           <div className="grid lg:grid-cols-[1.1fr,0.9fr] gap-6 sm:gap-8 lg:gap-20 xl:gap-24 items-center">
 
             {/* Left Side - Typography Focus */}
-            <div className="space-y-5 sm:space-y-6 lg:space-y-8 order-2 lg:order-1 relative z-10">
+            <div className="space-y-5 sm:space-y-6 lg:space-y-8 order-1 lg:order-1 relative z-10">
               {/* Premium Metadata */}
               <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                 <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#131c80]/20 border border-[#3066be]/20 rounded-full backdrop-blur-sm">
@@ -65,7 +65,7 @@ export default function Hero() {
               {/* Premium Typography with Animated Gradient */}
               <div className="space-y-4 sm:space-y-5 lg:space-y-6">
                 <div className="space-y-3">
-                  <h1 className="text-[clamp(2.25rem,8vw,5rem)] lg:text-[clamp(3rem,6vw,6rem)] font-black leading-[0.9] tracking-[-0.03em]">
+                  <h1 className="text-[clamp(2.1rem,7.5vw,4.5rem)] sm:text-[clamp(2.75rem,7vw,5.5rem)] lg:text-[clamp(3.25rem,6vw,6rem)] font-black leading-[0.95] sm:leading-[0.9] tracking-[-0.03em]">
                     <span className="inline-block text-slate-50 animate-fade-in">{heroData.headline.prefix}</span>
                     <br />
                     <span className="inline-block relative">
@@ -101,15 +101,15 @@ export default function Hero() {
               </div>
 
               {/* Premium Stats Grid */}
-              <div className="grid grid-cols-3 gap-4 sm:gap-5 lg:gap-6 pt-2 sm:pt-3">
+              <div className="grid grid-cols-3 gap-2 xs:gap-3 sm:gap-5 lg:gap-6 pt-2 sm:pt-3">
                 {heroData.stats.map((stat, index) => (
                   <div key={index} className="group relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-[#3066be]/10 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className={`relative text-center ${index === 2 ? 'lg:text-right' : index === 0 ? 'lg:text-left' : ''} space-y-0.5`}>
-                      <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-br from-[#5AA8D6] to-[#3066be] bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
+                      <div className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black bg-gradient-to-br from-[#5AA8D6] to-[#3066be] bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
                         {stat.value}
                       </div>
-                      <div className="text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-[0.12em] font-semibold">
+                      <div className="text-[8px] xs:text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-[0.08em] sm:tracking-[0.12em] font-semibold truncate">
                         {stat.label}
                       </div>
                     </div>
@@ -165,7 +165,7 @@ export default function Hero() {
             </div>
 
             {/* Right Side - Code Editor Style Project Showcase */}
-            <div className="relative order-1 lg:order-2 w-full max-w-xs lg:max-w-sm mx-auto lg:mx-0 lg:ml-auto">
+            <div className="relative order-2 lg:order-2 w-full max-w-[280px] xs:max-w-xs lg:max-w-sm mx-auto lg:mx-0 lg:ml-auto">
               {/* Code Editor Window */}
               <div className="relative aspect-[3/4] bg-[#0a0e1a] border-2 border-[#1a1f35] rounded-lg overflow-hidden shadow-[0_0_40px_rgba(19,28,128,0.4)] hover:shadow-[0_0_60px_rgba(90,168,214,0.3)] transition-all duration-500">
 
@@ -228,16 +228,16 @@ export default function Hero() {
                           <span className="text-[#a5d6ff]">{'{'}</span>
                         </span>
                       </div>
-                      <div className="flex items-start gap-2 opacity-50">
-                        <span className="text-slate-600 select-none">03</span>
-                        <span className="text-slate-400 pl-3">
+                      <div className="flex items-start gap-2 opacity-50 overflow-hidden">
+                        <span className="text-slate-600 select-none flex-shrink-0">03</span>
+                        <span className="text-slate-400 pl-3 truncate">
                           <span className="text-[#79c0ff]">name:</span>{' '}
                           <span className="text-[#a5d6ff]">"{featuredProjects[activeProject].name}"</span>
                         </span>
                       </div>
-                      <div className="flex items-start gap-2 opacity-50">
-                        <span className="text-slate-600 select-none">04</span>
-                        <span className="text-slate-400 pl-3">
+                      <div className="flex items-start gap-2 opacity-50 overflow-hidden">
+                        <span className="text-slate-600 select-none flex-shrink-0">04</span>
+                        <span className="text-slate-400 pl-3 truncate">
                           <span className="text-[#79c0ff]">tech:</span>{' '}
                           <span className="text-[#a5d6ff]">"{featuredProjects[activeProject].tech}"</span>
                         </span>

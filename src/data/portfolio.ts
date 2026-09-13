@@ -93,9 +93,9 @@ export const aboutData = {
     // Professional summary
     summary: {
         text: [
-            "I am a passionate Full Stack Developer and Diploma student in Computer Science at Uluberia Government Polytechnic (WBSCTE). My journey is defined by a relentless curiosity for technology.",
-            "With a strong foundation in Python, React, Node.js, JavaScript, and Web Technologies, I specialize in building data-driven applications and immersive web experiences. I am constantly exploring Generative AI and Data Structures to push the boundaries of what's possible.",
-            "I possess the ability to develop innovative solutions utilizing artificial intelligence, and I am committed to initiating projects in the future that harness AI to deliver substantial value and positive impact for a broad audience. My aspiration is to create advancements whose contributions will be significant and widely beneficial."
+            "I am a dedicated Full Stack Developer with a strong foundation in Computer Science, currently pursuing my Diploma at Uluberia Government Polytechnic. My journey in tech is driven by an insatiable curiosity and a commitment to continuous learning.",
+            "Specializing in Python, React, Node.js, and modern web technologies, I focus on engineering robust, data-driven applications and seamless digital experiences. Beyond traditional web development, I am actively exploring Data Structures, Algorithms, and Generative AI to craft innovative, scalable solutions.",
+            "I am highly motivated by the potential of Artificial Intelligence to solve complex problems and create meaningful impact. My ultimate goal is to leverage cutting-edge technologies to build products that empower users and drive significant value across various domains."
         ],
         coreCompetencies: [
             "Full Stack Development",
@@ -112,34 +112,34 @@ export const aboutData = {
     // Study Experience
     experiences: [
         {
-            role:        "Uluberia Government Polytechnic",
-            company:     "West Bengal State Council of Technical Education (WBSCTE)",
-            result:      "GPA { 6.4 to 7.2 }",
+            role:        "Diploma in Computer Science and Technology",
+            company:     "Uluberia Government Polytechnic (WBSCTE)",
+            result:      "Current CGPA: 7.2",
             period:      "2022 - 2025",
             location:    "Uluberia, West Bengal, India",
             type:        "Diploma",
-            description: "Diploma in Computer Science and Technology.",
+            description: "Comprehensive study of computer science fundamentals, software engineering, and modern application development.",
             achievements: [
-                "Completed Diploma in Computer Science and Technology.",
-                "Completed intensive hands-on training and certification.",
+                "Focused coursework in Data Structures, Algorithms, and Web Development.",
+                "Participated in multiple hands-on projects and technical workshops.",
             ],
-            tech:        ["Python", "JavaScript", "HTML", "CSS", "Web Development", "Application Development"],
+            tech:        ["Python", "JavaScript", "React", "Node.js", "Full Stack Development"],
             gradient:    "from-[#131c80] to-[#3066be]"
         },
         {
-            role:        "Kulumbani Jamunadas Khamka High School",
-            company:     "West Bengal Board of Secondary Education (WBSE)",
-            result:      "Maks-42%",
-            period:      "2021 - 2022 (Secondary)",
+            role:        "Secondary Education",
+            company:     "Kulumbani Jamunadas Khamka High School (WBBSE)",
+            result:      "Completed",
+            period:      "2021 - 2022",
             location:    "Bishnupur, West Bengal, India",
             type:        "Secondary",
-            description: "Secondary School Certificate.",
+            description: "Core secondary education with a focus on science and mathematics.",
             achievements: [
-                "Completed Secondary School Certificate.",
-                "Completed intensive hands-on training and certification.",
+                "Successfully completed Secondary School Certificate.",
+                "Developed foundational knowledge in core academic subjects.",
             ],
-            tech: ["English", "Bengali", "Math", "Science", "Social"],
-            gradient: "from-[#131c80] to-[#3066be]"
+            tech: ["Mathematics", "Science", "English"],
+            gradient: "from-[#3066be] to-[#5AA8D6]"
         },
 
     ],
@@ -211,41 +211,41 @@ export const aboutData = {
     // Education & Achievements
     scienceFairs: [
         {
-            name:           " Science & Engineering Fair 2025",
-            category:       "BIRLA INDUSTRIAL & TECHNOLOGICAL MUSEUM",
-            achievement:    "Participate",
-            date:           "7th - 10th Jan 2025",
-            description:    " Participated in the prestigious Science & Engineering Fair 2025 organized by Birla Industrial & Technological Museum (a unit of National Council of Science Museums, Ministry of Culture, Govt. of India). Demonstrated scientific creativity and innovation by presenting a project in the Uluberia Govt. Polytechnic, Howrah, West Bengal category during this interstate science exhibition held from January 7-10, 2025. The fair showcased cutting-edge science models from Eastern India under the theme \"Science and Technology for Sustainable Future\"",
+            name:           "Science & Engineering Fair 2025",
+            category:       "Birla Industrial & Technological Museum",
+            achievement:    "Participant",
+            date:           "Jan 2025",
+            description:    "Participated in the prestigious Science & Engineering Fair 2025 organized by BITM (National Council of Science Museums, Govt. of India). Demonstrated scientific creativity by presenting an innovative project under the theme 'Science and Technology for Sustainable Future'.",
             certificate:    "",
             gradient:       "from-[#FFD700] to-[#FFA500],from-[#C0C0C0] to-[#A8A8A8]",
             icon:           "🔭"
         },
         {
-            name:           "Inter College Science Fair & Practical Project Exibition 2025",
-            category:       "THE CALCUTTA TECHNICAL SCHOOL",
-            achievement:    "Participate in Group ",
-            date:           "9th May 2024",
-            description:    "Participated in the prestigious Inter College Science Fair & Practical Project Exibition 2025 organized by The Calcutta Technical School (a unit of National Council of Science Museums, Ministry of Culture, Govt. of India). Demonstrated scientific creativity and innovation by presenting a project in the Uluberia Govt. Polytechnic, Howrah, West Bengal category during this interstate science exhibition held from May 9, 2024.",
+            name:           "Inter-College Science Fair & Practical Project Exhibition 2024",
+            category:       "The Calcutta Technical School",
+            achievement:    "Group Participant",
+            date:           "May 2024",
+            description:    "Showcased scientific innovation by collaborating on a group project presented at the Inter-College Science Fair & Practical Project Exhibition, organized by The Calcutta Technical School.",
             certificate:    "",
             gradient:       "from-[#C0C0C0] to-[#A8A8A8],from-[#FFD700] to-[#FFA500]",
             icon:           "🏅5️⃣"
         },
         {
-            name:           "The State level online Coding Competition (Techphoria-2024), ",
-            category:       "TECHNIQUE POLYTECHNIC INSTITUTE",
-            achievement:    "Participate ",
-            date:           "9th May 2024",
-            description:    "Certificate of Participation awarded to Nilanjan Nayak from Uluberia Government Polytechnic for successfully taking part in NBA Approve the state-level online Coding Competition (Techphoria-2024) hosted by Technique Polytechnic Institute on October 22, 2024.",
+            name:           "Techphoria-2024: State-Level Online Coding Competition",
+            category:       "Technique Polytechnic Institute",
+            achievement:    "Participant",
+            date:           "Oct 2024",
+            description:    "Successfully competed in Techphoria-2024, an NBA-approved state-level online coding competition hosted by Technique Polytechnic Institute, demonstrating algorithmic problem-solving skills.",
             certificate:    "https://drive.google.com/file/d/1GV1mo7NEz3WMWLCoiliwUrDG2HKXmEQK/view?usp=sharing ",
             gradient:       "from-[#C0C0C0] to-[#A8A8A8],from-[#FFD700] to-[#FFA500]",
             icon:           "🏅5️⃣"
         },
         {
             name:           "Workshop on Basic Digital Electronics",
-            category:       "ULUBERIA GOVT. POLYTECHNIC",
-            achievement:    "Participate in Group ",
-            date:           "9th and 10th Aug 2023",
-            description:    "Participated in the prestigious Workshop on Basic Digital Electronics organized by Uluberia Govt. Polytechnic, Howrah, West Bengal. Demonstrated scientific creativity and innovation by presenting a project in the Uluberia Govt. Polytechnic, Howrah, West Bengal category during this interstate science exhibition held from Aug 9-10, 2023.",
+            category:       "Uluberia Govt. Polytechnic",
+            achievement:    "Group Participant",
+            date:           "Aug 2023",
+            description:    "Actively participated in the Basic Digital Electronics Workshop, engaging in hands-on activities and foundational electronics concepts at Uluberia Govt. Polytechnic.",
             certificate:    "",
             gradient:       "from-[#C0C0C0] to-[#A8A8A8],from-[#FFD700] to-[#FFA500]",
             icon:           "💡"
@@ -478,7 +478,7 @@ export const skillsData = {
                 { name: "Python",     level: 15, years: 3, projects: 2, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
                 { name: "C",          level: 9, years: 2, projects: 2, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
                 { name: "JavaScript", level: 25, years: 2, projects: 12, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-                { name: "HTML",       level: 45, years: 3, projects: 20, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+                { name: "HTML",       level: 46, years: 3, projects: 20, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
                 { name: "CSS",        level: 45, years: 3, projects: 20, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
                 { name: "Java",       level: 13, years: 2, projects: 3, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
                 
@@ -492,7 +492,7 @@ export const skillsData = {
             gradient: "from-[#5AA8D6] to-[#00bfff]",
             iconSize: 32,
             skills: [
-                { name: "TypeScript", level: 25, years: 2, projects: 5, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+                { name: "TypeScript", level: 26, years: 2, projects: 5, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
                 { name: "React",      level: 25, years: 1, projects: 5, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
                 { name: "Node.js",    level: 25, years: 1, projects: 5, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
                 { name: "vite",       level: 20, years: 3, projects: 5, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg" },
@@ -506,8 +506,8 @@ export const skillsData = {
             gradient:     "from-[#00bfff] to-[#3066be]",
             iconSize:     32,
             skills: [
-                { name: "Generative AI", level: 20, years: 1, projects: 2, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
-                { name: "Data Viz",      level: 20, years: 2, projects: 4, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" },
+                { name: "Generative AI", level: 26, years: 1, projects: 2, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
+                { name: "Data Viz",      level: 26, years: 2, projects: 4, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" },
                 { name: "Algorithms",    level: 15, years: 2, projects: 2, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
                 { name: "Machine Learning", level: 15, years: 2, projects: 3, logo: "https://www.freepik.com/icon/machine-learning_2172891#fromView=image_search_similar&page=1&position=0&uuid=7d491d3a-a83b-4b0a-b23c-472424238414" },
                 { name: "Chat GPT", level: 45, years: 2, projects: 6, logo: "https://upload.wikimedia.org/wikipedia/commons/e/ef/ChatGPT-Logo.svg" },

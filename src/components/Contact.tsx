@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import {
   Mail, MapPin, Phone, Send, CheckCircle2,
-  Linkedin, Github, Twitter, Globe, Clock, MessageSquare,
+  Linkedin, Github, Globe, Clock, MessageSquare,
   Sparkles, ArrowUpRight, Calendar, AlertCircle
 } from 'lucide-react';
 
@@ -22,7 +22,6 @@ export default function Contact() {
 
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
-  const formRef = useRef<HTMLFormElement>(null);
   const isHeaderInView = useInView(headerRef, { once: true, margin: "-100px" });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -289,7 +288,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 40 }}
             animate={isHeaderInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.6 }}
-            className="relative bg-[#0a0e1a]/80 backdrop-blur-sm rounded-xl p-8 border border-[#1a1f35]"
+            className="relative bg-[#0a0e1a]/80 backdrop-blur-sm rounded-xl p-5 sm:p-8 border border-[#1a1f35]"
           >
             <div className="relative z-10">
               <h3 className="text-2xl font-bold text-white mb-2">Send a Message</h3>

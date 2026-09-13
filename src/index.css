@@ -2,27 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* ultra-professional.css */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer base {
+  :root {
+    --sat: env(safe-area-inset-top, 0px);
+    --sab: env(safe-area-inset-bottom, 0px);
+    --sal: env(safe-area-inset-left, 0px);
+    --sar: env(safe-area-inset-right, 0px);
+  }
+
   html {
     scroll-behavior: smooth;
     background-color: #0A0118;
     overscroll-behavior-y: none;
-    /* Prevents "hanging" or bounce effects */
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
     @apply antialiased bg-[#0A0118] text-slate-50;
     overscroll-behavior-y: none;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  #root {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  /* Optimize interactive touch targets */
+  button, a, input, select, textarea {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
 @layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   .writing-mode-vertical {
     writing-mode: vertical-rl;
     text-orientation: mixed;

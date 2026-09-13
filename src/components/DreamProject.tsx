@@ -97,18 +97,18 @@ export default function DreamProject() {
                                 className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-700 ease-out"
                             />
 
-                            {/* Bottom Info Bar on Image */}
-                            <div className="absolute bottom-0 left-0 right-0 bg-black/80 backdrop-blur-sm border-t border-white/10 p-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 z-30 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                                <div className="flex flex-wrap gap-3 sm:gap-4">
+                            {/* Bottom Info Bar on Image - Always visible on mobile, hover on desktop */}
+                            <div className="absolute bottom-0 left-0 right-0 bg-black/85 backdrop-blur-sm border-t border-white/10 p-2.5 sm:p-3 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0 z-30 translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-500">
+                                <div className="flex flex-wrap gap-2.5 sm:gap-4">
                                     {dreamProjectData.impact.slice(0, 2).map((item, i) => (
-                                        <div key={i} className="flex items-center gap-2 text-[10px] sm:text-xs text-slate-300">
-                                            <Zap size={12} className="text-[#5AA8D6]" />
-                                            {item}
+                                        <div key={i} className="flex items-center gap-1.5 text-[9px] sm:text-xs text-slate-300">
+                                            <Zap size={11} className="text-[#5AA8D6]" />
+                                            <span>{item}</span>
                                         </div>
                                     ))}
                                 </div>
-                                <a href={dreamProjectData.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-[10px] sm:text-xs font-bold text-white hover:text-[#5AA8D6] transition-colors">
-                                    OPEN APP <ArrowUpRight size={12} />
+                                <a href={dreamProjectData.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-[9px] sm:text-xs font-bold text-[#5AA8D6] hover:text-white transition-colors">
+                                    OPEN APP <ArrowUpRight size={11} />
                                 </a>
                             </div>
                         </div>
@@ -118,8 +118,8 @@ export default function DreamProject() {
                     <div className="lg:col-span-4 flex flex-col">
 
                         {/* Description Block */}
-                        <div className="p-5 sm:p-6 border-b border-white/10 bg-white/[0.01]">
-                            <div className="flex items-center gap-2 mb-3">
+                        <div className="p-4 sm:p-5 lg:p-6 border-b border-white/10 bg-white/[0.01]">
+                            <div className="flex items-center gap-2 mb-2.5">
                                 <Terminal size={14} className="text-[#5AA8D6]" />
                                 <h3 className="text-xs font-bold text-white uppercase tracking-widest">Abstract</h3>
                             </div>
@@ -134,12 +134,12 @@ export default function DreamProject() {
                                 {dreamProjectData.quickStats.map((stat, idx) => (
                                     <div
                                         key={idx}
-                                        className={`p-4 hover:bg-white/[0.02] transition-colors ${idx % 2 === 0 ? 'border-r border-white/10' : ''
+                                        className={`p-3 sm:p-4 hover:bg-white/[0.02] transition-colors ${idx % 2 === 0 ? 'border-r border-white/10' : ''
                                             } ${idx < 2 ? 'border-b border-white/10' : ''
                                             }`}
                                     >
-                                        <div className="text-[9px] sm:text-[10px] font-mono text-slate-500 uppercase mb-1">{stat.label}</div>
-                                        <div className="text-lg sm:text-xl font-mono font-medium text-white truncate" title={stat.value}>{stat.value}</div>
+                                        <div className="text-[8px] xs:text-[9px] sm:text-[10px] font-mono text-slate-500 uppercase mb-1 truncate">{stat.label}</div>
+                                        <div className="text-sm xs:text-base sm:text-lg lg:text-xl font-mono font-medium text-white truncate" title={stat.value}>{stat.value}</div>
                                     </div>
                                 ))}
                             </div>

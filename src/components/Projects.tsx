@@ -375,15 +375,15 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 px-3 py-1.5 bg-[#1a1f35] rounded-md border border-[#2a2f45]">
-                    <Code2 size={12} className="text-[#5AA8D6]" />
-                    <span className="text-[10px] font-mono text-slate-300">
+                  <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 sm:py-1.5 bg-[#1a1f35] rounded-md border border-[#2a2f45] max-w-[150px] xs:max-w-[200px] sm:max-w-none">
+                    <Code2 size={12} className="text-[#5AA8D6] flex-shrink-0" />
+                    <span className="text-[9px] sm:text-[10px] font-mono text-slate-300 truncate">
                       {currentProject.title.toLowerCase().replace(/\s+/g, '-')}.tsx
                     </span>
                   </div>
 
                   <div className="flex items-center gap-2">
-                    <div className="flex items-center gap-1.5 px-2 py-1 bg-[#1a1f35]/50 rounded text-[10px] font-mono text-slate-400">
+                    <div className="flex items-center gap-1.5 px-2 py-1 bg-[#1a1f35]/50 rounded text-[9px] sm:text-[10px] font-mono text-slate-400">
                       <GitFork size={10} />
                       <span>main</span>
                     </div>
@@ -424,27 +424,27 @@ export default function Projects() {
                   </div>
 
                   {/* Minimalist Info Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-[#0a0e1a] to-transparent">
-                    <div className="flex items-center justify-between gap-3 px-3 py-2 bg-[#0d1117]/90 backdrop-blur-md border border-[#1a1f35] rounded-md">
-                      <div className="flex items-center gap-4">
-                        <div className="flex items-center gap-2">
+                  <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 bg-gradient-to-t from-[#0a0e1a] to-transparent">
+                    <div className="flex items-center justify-between gap-2 sm:gap-3 px-2.5 sm:px-3 py-1.5 sm:py-2 bg-[#0d1117]/90 backdrop-blur-md border border-[#1a1f35] rounded-md">
+                      <div className="flex items-center gap-2 sm:gap-4">
+                        <div className="flex items-center gap-1.5 sm:gap-2">
                           <div className="w-1.5 h-1.5 rounded-full bg-[#27c93f] animate-pulse" />
-                          <span className="text-xs font-mono text-slate-300">Running</span>
+                          <span className="text-[10px] sm:text-xs font-mono text-slate-300">Running</span>
                         </div>
                         <div className="h-3 w-px bg-[#1a1f35]" />
-                        <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
-                          <Clock size={12} />
+                        <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-mono text-slate-400">
+                          <Clock size={11} />
                           <span>{currentProject.stats.year}</span>
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-3">
-                        <div className="flex items-center gap-1.5 text-xs font-mono text-[#5AA8D6]">
-                          <Star size={12} />
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <div className="flex items-center gap-1 text-[10px] sm:text-xs font-mono text-[#5AA8D6]">
+                          <Star size={11} />
                           <span>{currentProject.stats.stars}</span>
                         </div>
-                        <div className="flex items-center gap-1.5 text-xs font-mono text-slate-400">
-                          <Eye size={12} />
+                        <div className="flex items-center gap-1 text-[10px] sm:text-xs font-mono text-slate-400">
+                          <Eye size={11} />
                           <span>{currentProject.stats.views}</span>
                         </div>
                       </div>
@@ -453,8 +453,8 @@ export default function Projects() {
                 </div>
 
                 {/* IDE Status Bar */}
-                <div className="px-3 py-1.5 bg-[#007acc] text-white text-[9px] font-mono flex items-center justify-between">
-                  <div className="flex items-center gap-4">
+                <div className="px-2.5 sm:px-3 py-1.5 bg-[#007acc] text-white text-[9px] font-mono flex items-center justify-between">
+                  <div className="flex items-center gap-2 sm:gap-4">
                     <div className="flex items-center gap-1.5">
                       <GitFork size={10} />
                       <span>master*</span>
@@ -464,8 +464,8 @@ export default function Projects() {
                       <span>0 errors, 0 warnings</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <span>Ln 309, Col 1</span>
+                  <div className="hidden sm:flex items-center gap-3 md:gap-4">
+                    <span className="hidden md:inline">Ln 309, Col 1</span>
                     <span>UTF-8</span>
                     <span>TypeScript React</span>
                   </div>
@@ -606,14 +606,14 @@ export default function Projects() {
                 )}
 
                 {/* CTA Buttons */}
-                <div className="flex gap-3 pt-2">
+                <div className="flex flex-col xs:flex-row gap-2.5 sm:gap-3 pt-2">
                   <a
                     href={currentProject.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-[#5AA8D6] hover:bg-[#4a98c6] text-white rounded-lg font-medium transition-all text-sm"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-[#5AA8D6] hover:bg-[#4a98c6] text-white rounded-lg font-medium transition-all text-xs sm:text-sm shadow-md"
                   >
-                    <Play size={16} className="fill-white" />
+                    <Play size={15} className="fill-white" />
                     <span>Live Demo</span>
                   </a>
 
@@ -621,9 +621,9 @@ export default function Projects() {
                     href={currentProject.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-[#1a1f35] hover:bg-[#2a2f45] text-white border border-[#2a2f45] rounded-lg font-medium transition-all text-sm"
+                    className="flex-1 flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-[#1a1f35] hover:bg-[#2a2f45] text-white border border-[#2a2f45] rounded-lg font-medium transition-all text-xs sm:text-sm"
                   >
-                    <Github size={16} />
+                    <Github size={15} />
                     <span>Source Code</span>
                   </a>
                 </div>
@@ -634,7 +634,7 @@ export default function Projects() {
 
         {/* Grid View */}
         {viewMode === 'grid' && (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
             {projectsData.map((project, idx) => (
               <div
                 key={idx}
@@ -666,8 +666,8 @@ export default function Projects() {
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a] via-[#0a0e1a]/50 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
 
-                    {/* Hover Actions */}
-                    <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {/* Hover Actions - Visible on mobile touch screens */}
+                    <div className="absolute inset-0 flex items-center justify-center gap-3 opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
                       <a
                         href={project.liveUrl}
                         target="_blank"
