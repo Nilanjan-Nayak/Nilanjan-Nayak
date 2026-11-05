@@ -13,6 +13,9 @@ import {
 } from 'lucide-react';
 
 import profileImg from '../image/IMG-20251021-WA0067.jpg';
+import projectShot1 from '../image/Screenshot 2025-07-19 212242.png';
+import projectShot2 from '../image/Screenshot 2025-08-16 234248.png';
+import projectShot3 from '../image/Screenshot 2025-11-27 141956.png';
 
 
 // ============================================================================
@@ -53,35 +56,37 @@ export const heroData = {
     ],
     featuredProjects: [
         {
-            name: "Star Ai lab",
-            tech: "React + AI",
-            year: "2024",
-            image: "../image/Nilanjan.png"
-        },
-        {
-            name: "Carrrerkick",
-            tech: "Web Dev",
-            year: "2024",
-            image: "/images/IMG-20251021-WA0067.jpg"
+            name: "Star AI Lab",
+            tech: "React • AI Integrations • Tailwind",
+            year: "2025",
+            image: projectShot1,
+            description: "Showcase of AI-powered developer utilities and intelligent interactive tools.",
+            link: "https://github.com/Nilanjan-Nayak"
         },
         {
             name: "Star Assistant",
-            tech: "Python + Analytics + React + Node.js",
-            year: "Appearing",
-            image: "/images/IMG-20251021-WA0067.jpg"
-        },
-        {
-            name: "Media storage Management",
-            tech: "html + css + js + Python",
+            tech: "Python • Analytics • React • AI",
             year: "2025",
-            image: "/images/IMG-20251021-WA0067.jpg"
+            image: projectShot2,
+            description: "Intelligent desktop & voice assistant for workflow automation.",
+            link: "https://github.com/Nilanjan-Nayak"
         },
         {
-            name: "Star Mobile Assistant",
-            tech: "Python + Analytics + React + Node.js + Flutter",
-            year: "Appearing",
-            image: "/images/IMG-20251021-WA0067.jpg"
+            name: "CareerKick Portal",
+            tech: "React • Node.js • Full-Stack",
+            year: "2024",
+            image: projectShot3,
+            description: "Comprehensive career & internship portal connecting developers.",
+            link: "https://github.com/Nilanjan-Nayak"
         },
+        {
+            name: "Media Storage System",
+            tech: "Python • JavaScript • CSS",
+            year: "2024",
+            image: profileImg,
+            description: "High-speed local media storage and indexing dashboard.",
+            link: "https://github.com/Nilanjan-Nayak"
+        }
     ]
 };
 
